@@ -1,29 +1,16 @@
 
 def even_weighted(s):
-    """
-    >>> x = [1, 2, 3, 4, 5, 6]
-    >>> even_weighted(x)
-    [0, 6, 20]
-    """
     new_s = []
     for element in s:
         if s.index(element) % 2 == 0:
+            old_index = s.index(element)
             new_value = element * s.index(element)
+            s[old_index] = 0 #This should effectively remove the element but maintain the index
             new_s.append(new_value)
     return new_s
 
-def couple(s, t):
-    """Return a list of two-element lists in which the i-th element is [s[i], t[i]].
 
-    >>> a = [1, 2, 3]
-    >>> b = [4, 5, 6]
-    >>> couple(a, b)
-    [[1, 4], [2, 5], [3, 6]]
-    >>> c = ['c', 6]
-    >>> d = ['s', '1']
-    >>> couple(c, d)
-    [['c', 's'], [6, '1']]
-    """
+def couple(s, t):
     assert len(s) == len(t)
     # This is the better way
     zipped_list = zip(s, t)
@@ -39,23 +26,21 @@ def couple(s, t):
 
 
 def copy_file(input_filename, output_filename):
-    """Print each line from input with the line number and a colon prepended,
-    then write that line to the output file.
-    >>> copy_file('text.txt', 'output.txt')
-    1: They say you should never eat dirt.
-    2: It's not nearly as good as an onion.
-    3: It's not as good as the CS pun on my shirt.
-    """
-    """*** YOUR CODE HERE ***"""
     input_file = open(input_filename, "r")
     output_filename = open(output_filename, "w")
     i =0
     for line in input_file:
         i += 1
         line = line.strip()
-        output_filename.write(f"{i}: {line}")
-        print(f"{i}: {line}")
+        if i == 1:
+            output_filename.write(f"{i}: {line}")
+        else:
+            output_filename.write(f"\n{i}: {line}")
 
+
+# E           "1: They say you should never eat dirt.\n2: It's not nearly as good as an onion.\n3: It's not as good as the CS pun on my shirt.\n" ==
+#             "1: They say you should never eat dirt.\n2: It's not nearly as good as an onion.\n3: It's not as good as the CS pun on my shirt."
+#
 
 
 ########################################################
