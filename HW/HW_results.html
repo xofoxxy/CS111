@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison Report</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            flex-direction: column;
+            font-family: monospace, sans-serif;
+            line-height: 1.4;
+            background-color: #f9f9f9;
+            color: rgb(0, 46, 93);
+        }
+        .page-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        header, footer {
+            background-color: rgb(0, 46, 93);
+            color: white;
+            text-align: center;
+        }
+        header h1, footer p {
+            margin: 0;
+            padding: 5px 0;
+        }
+        header {
+            margin-bottom: 10px;
+        }
+        footer {
+            margin-top: 10px;
+        }
+        h2 {
+            padding: 5px 0;
+        }
+        .test-summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 50px;
+            font-size: 1em;
+            font-weight: bold;
+        }
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+        .test-result-passed, .test-result-failed {
+            padding: 5px;
+            border-radius: 5px;
+            margin: 10px 50px;
+            position: relative;
+        }
+        .test-result-passed {
+            background-color: #d4edda;
+            border: 2px solid #c3e6cb;
+        }
+        .test-result-failed {
+            background-color: #f8d7da;
+            border: 2px solid #f5c6cb;
+        }
+        .result-header {
+            text-align: center;
+        }
+        .result-header h2 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+        .result-subheader {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 5px;
+            font-size: 1em;
+            padding: 0 10px;
+        }
+        .result-subheader .status, .result-subheader .score {
+            font-size: 1em;
+        }
+        .result-subheader .status h2, .result-subheader .score h2 {
+            display: inline;
+            font-size: 1em;
+            margin-right: 5px;
+        }
+        .comparison-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 10px;
+            padding: 0 10px;
+
+        }
+        @media (max-width: 1500px) {
+            .comparison-container {
+                flex-direction: column;
+            }
+        }
+        .section {
+            flex: 1;
+            min-width: 400px;
+        }
+        .section strong {
+            font-size: 1em;
+        }
+        .content {
+            background: rgb(245, 245, 245);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            overflow-x: auto;
+        }
+        .test-info {
+            margin: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <header>
+            <h1>Hw Results</h1>
+        </header>
+        <main class="main-content">
+            <div class="test-summary">
+                <span>Passed: 13 / 15</span>
+                <span>Total Score: 41.1 / 45.0</span>
+            </div>
+            
+            
+            <div class="test-result-passed">
+                <div class="content-wrapper">
+                    <div class="result-header">
+                        <h2>Test 1 Person 35 Tip</h2>
+                        <div class="result-subheader">
+                            <div class="status">
+                                <h2>Status:</h2> Passed
+                            </div>
+                            <div class="score">
+                                <h2>Score:</h2> 3.0 / 3.0
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-container">
+                        <div class="section">
+                            <p><strong>Observed (Your Actual Output)</strong></p>
+                            <div class="content">
+                                <pre>1
+0 large pizzas, 0 medium pizzas, and 1 small pizzas will be needed.
+A total of 113.10 square inches of pizza will be ordered (113.10 per guest).
+35
+The total cost of the event will be: $9.83.
+</pre>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <p><strong>Expected (Correct Output)</strong></p>
+                            <div class="content">
+                                <pre><span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>1
+0 large pizzas, 0 medium pizzas, and 1 small pizzas will be needed.
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>A total of 113.10 square inches of pizza will be ordered (113.10 per guest).
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>35
+The total cost of the event will be: $9.83.
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="test-result-passed">
+                <div class="content-wrapper">
+                    <div class="result-header">
+                        <h2>Test 3 Person 80 Tip</h2>
+                        <div class="result-subheader">
+                            <div class="status">
+                                <h2>Status:</h2> Passed
+                            </div>
+                            <div class="score">
+                                <h2>Score:</h2> 4.0 / 4.0
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-container">
+                        <div class="section">
+                            <p><strong>Observed (Your Actual Output)</strong></p>
+                            <div class="content">
+                                <pre>3
+0 large pizzas, 1 medium pizzas, and 0 small pizzas will be needed.
+A total of 201.06 square inches of pizza will be ordered (67.02 per guest).
+80
+The total cost of the event will be: $20.66.
+</pre>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <p><strong>Expected (Correct Output)</strong></p>
+                            <div class="content">
+                                <pre><span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>3
+0 large pizzas, 1 medium pizzas, and 0 small pizzas will be needed.
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>A total of 201.06 square inches of pizza will be ordered (67.02 per guest).
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>80
+The total cost of the event will be: $20.66.
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="test-result-passed">
+                <div class="content-wrapper">
+                    <div class="result-header">
+                        <h2>Test 4 Person 35 Tip</h2>
+                        <div class="result-subheader">
+                            <div class="status">
+                                <h2>Status:</h2> Passed
+                            </div>
+                            <div class="score">
+                                <h2>Score:</h2> 4.0 / 4.0
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-container">
+                        <div class="section">
+                            <p><strong>Observed (Your Actual Output)</strong></p>
+                            <div class="content">
+                                <pre>4
+0 large pizzas, 1 medium pizzas, and 1 small pizzas will be needed.
+A total of 314.16 square inches of pizza will be ordered (78.54 per guest).
+35
+The total cost of the event will be: $25.33.
+</pre>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <p><strong>Expected (Correct Output)</strong></p>
+                            <div class="content">
+                                <pre><span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>4
+0 large pizzas, 1 medium pizzas, and 1 small pizzas will be needed.
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>A total of 314.16 square inches of pizza will be ordered (78.54 per guest).
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>35
+The total cost of the event will be: $25.33.
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="test-result-passed">
+                <div class="content-wrapper">
+                    <div class="result-header">
+                        <h2>Test 7 Person 80 Tip</h2>
+                        <div class="result-subheader">
+                            <div class="status">
+                                <h2>Status:</h2> Passed
+                            </div>
+                            <div class="score">
+                                <h2>Score:</h2> 4.0 / 4.0
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-container">
+                        <div class="section">
+                            <p><strong>Observed (Your Actual Output)</strong></p>
+                            <div class="content">
+                                <pre>7
+1 large pizzas, 0 medium pizzas, and 0 small pizzas will be needed.
+A total of 314.16 square inches of pizza will be ordered (44.88 per guest).
+80
+The total cost of the event will be: $26.42.
+</pre>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <p><strong>Expected (Correct Output)</strong></p>
+                            <div class="content">
+                                <pre><span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>7
+1 large pizzas, 0 medium pizzas, and 0 small pizzas will be needed.
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>A total of 314.16 square inches of pizza will be ordered (44.88 per guest).
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>80
+The total cost of the event will be: $26.42.
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="test-result-passed">
+                <div class="content-wrapper">
+                    <div class="result-header">
+                        <h2>Test 8 Person 80 Tip</h2>
+                        <div class="result-subheader">
+                            <div class="status">
+                                <h2>Status:</h2> Passed
+                            </div>
+                            <div class="score">
+                                <h2>Score:</h2> 4.0 / 4.0
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-container">
+                        <div class="section">
+                            <p><strong>Observed (Your Actual Output)</strong></p>
+                            <div class="content">
+                                <pre>8
+1 large pizzas, 0 medium pizzas, and 1 small pizzas will be needed.
+A total of 427.26 square inches of pizza will be ordered (53.41 per guest).
+80
+The total cost of the event will be: $39.53.
+</pre>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <p><strong>Expected (Correct Output)</strong></p>
+                            <div class="content">
+                                <pre><span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>8
+1 large pizzas, 0 medium pizzas, and 1 small pizzas will be needed.
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>A total of 427.26 square inches of pizza will be ordered (53.41 per guest).
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>80
+The total cost of the event will be: $39.53.
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="test-result-passed">
+                <div class="content-wrapper">
+                    <div class="result-header">
+                        <h2>Test 10 Person 35 Tip</h2>
+                        <div class="result-subheader">
+                            <div class="status">
+                                <h2>Status:</h2> Passed
+                            </div>
+                            <div class="score">
+                                <h2>Score:</h2> 2.0 / 2.0
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-container">
+                        <div class="section">
+                            <p><strong>Observed (Your Actual Output)</strong></p>
+                            <div class="content">
+                                <pre>10
+1 large pizzas, 1 medium pizzas, and 0 small pizzas will be needed.
+A total of 515.22 square inches of pizza will be ordered (51.52 per guest).
+35
+The total cost of the event will be: $35.32.
+</pre>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <p><strong>Expected (Correct Output)</strong></p>
+                            <div class="content">
+                                <pre><span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>10
+1 large pizzas, 1 medium pizzas, and 0 small pizzas will be needed.
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>A total of 515.22 square inches of pizza will be ordered (51.52 per guest).
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>35
+The total cost of the event will be: $35.32.
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="test-result-passed">
+                <div class="content-wrapper">
+                    <div class="result-header">
+                        <h2>Test 11 Person 10 Tip</h2>
+                        <div class="result-subheader">
+                            <div class="status">
+                                <h2>Status:</h2> Passed
+                            </div>
+                            <div class="score">
+                                <h2>Score:</h2> 2.0 / 2.0
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-container">
+                        <div class="section">
+                            <p><strong>Observed (Your Actual Output)</strong></p>
+                            <div class="content">
+                                <pre>11
+1 large pizzas, 1 medium pizzas, and 1 small pizzas will be needed.
+A total of 628.32 square inches of pizza will be ordered (57.12 per guest).
+10
+The total cost of the event will be: $36.78.
+</pre>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <p><strong>Expected (Correct Output)</strong></p>
+                            <div class="content">
+                                <pre><span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>11
+1 large pizzas, 1 medium pizzas, and 1 small pizzas will be needed.
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>A total of 628.32 square inches of pizza will be ordered (57.12 per guest).
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>10
+The total cost of the event will be: $36.78.
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="test-result-passed">
+                <div class="content-wrapper">
+                    <div class="result-header">
+                        <h2>Test 12 Person 80 Tip</h2>
+                        <div class="result-subheader">
+                            <div class="status">
+                                <h2>Status:</h2> Passed
+                            </div>
+                            <div class="score">
+                                <h2>Score:</h2> 2.0 / 2.0
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-container">
+                        <div class="section">
+                            <p><strong>Observed (Your Actual Output)</strong></p>
+                            <div class="content">
+                                <pre>12
+1 large pizzas, 1 medium pizzas, and 2 small pizzas will be needed.
+A total of 741.42 square inches of pizza will be ordered (61.78 per guest).
+80
+The total cost of the event will be: $73.30.
+</pre>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <p><strong>Expected (Correct Output)</strong></p>
+                            <div class="content">
+                                <pre><span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>12
+1 large pizzas, 1 medium pizzas, and 2 small pizzas will be needed.
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>A total of 741.42 square inches of pizza will be ordered (61.78 per guest).
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>80
+The total cost of the event will be: $73.30.
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="test-result-passed">
+                <div class="content-wrapper">
+                    <div class="result-header">
+                        <h2>Test 13 Person 80 Tip</h2>
+                        <div class="result-subheader">
+                            <div class="status">
+                                <h2>Status:</h2> Passed
+                            </div>
+                            <div class="score">
+                                <h2>Score:</h2> 2.0 / 2.0
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-container">
+                        <div class="section">
+                            <p><strong>Observed (Your Actual Output)</strong></p>
+                            <div class="content">
+                                <pre>13
+1 large pizzas, 2 medium pizzas, and 0 small pizzas will be needed.
+A total of 716.28 square inches of pizza will be ordered (55.10 per guest).
+80
+The total cost of the event will be: $67.75.
+</pre>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <p><strong>Expected (Correct Output)</strong></p>
+                            <div class="content">
+                                <pre><span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>13
+1 large pizzas, 2 medium pizzas, and 0 small pizzas will be needed.
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>A total of 716.28 square inches of pizza will be ordered (55.10 per guest).
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>80
+The total cost of the event will be: $67.75.
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="test-result-passed">
+                <div class="content-wrapper">
+                    <div class="result-header">
+                        <h2>Test 14 Person 10 Tip</h2>
+                        <div class="result-subheader">
+                            <div class="status">
+                                <h2>Status:</h2> Passed
+                            </div>
+                            <div class="score">
+                                <h2>Score:</h2> 2.0 / 2.0
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-container">
+                        <div class="section">
+                            <p><strong>Observed (Your Actual Output)</strong></p>
+                            <div class="content">
+                                <pre>14
+2 large pizzas, 0 medium pizzas, and 0 small pizzas will be needed.
+A total of 628.32 square inches of pizza will be ordered (44.88 per guest).
+10
+The total cost of the event will be: $32.30.
+</pre>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <p><strong>Expected (Correct Output)</strong></p>
+                            <div class="content">
+                                <pre><span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>14
+2 large pizzas, 0 medium pizzas, and 0 small pizzas will be needed.
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>A total of 628.32 square inches of pizza will be ordered (44.88 per guest).
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>10
+The total cost of the event will be: $32.30.
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="test-result-passed">
+                <div class="content-wrapper">
+                    <div class="result-header">
+                        <h2>Test 16 Person 80 Tip Doubled</h2>
+                        <div class="result-subheader">
+                            <div class="status">
+                                <h2>Status:</h2> Passed
+                            </div>
+                            <div class="score">
+                                <h2>Score:</h2> 4.0 / 4.0
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-container">
+                        <div class="section">
+                            <p><strong>Observed (Your Actual Output)</strong></p>
+                            <div class="content">
+                                <pre>16
+1 large pizzas, 0 medium pizzas, and 1 small pizzas will be needed.
+A total of 1709.03 square inches of pizza will be ordered (106.81 per guest).
+80
+The total cost of the event will be: $79.06.
+</pre>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <p><strong>Expected (Correct Output)</strong></p>
+                            <div class="content">
+                                <pre><span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>16
+1 large pizzas, 0 medium pizzas, and 1 small pizzas will be needed.
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>A total of 1709.03 square inches of pizza will be ordered (106.81 per guest).
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>80
+The total cost of the event will be: $79.06.
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="test-result-passed">
+                <div class="content-wrapper">
+                    <div class="result-header">
+                        <h2>Test 100 Person 80 Tip Doubled</h2>
+                        <div class="result-subheader">
+                            <div class="status">
+                                <h2>Status:</h2> Passed
+                            </div>
+                            <div class="score">
+                                <h2>Score:</h2> 4.0 / 4.0
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-container">
+                        <div class="section">
+                            <p><strong>Observed (Your Actual Output)</strong></p>
+                            <div class="content">
+                                <pre>100
+7 large pizzas, 0 medium pizzas, and 1 small pizzas will be needed.
+A total of 9248.85 square inches of pizza will be ordered (92.49 per guest).
+80
+The total cost of the event will be: $396.14.
+</pre>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <p><strong>Expected (Correct Output)</strong></p>
+                            <div class="content">
+                                <pre><span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>100
+7 large pizzas, 0 medium pizzas, and 1 small pizzas will be needed.
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>A total of 9248.85 square inches of pizza will be ordered (92.49 per guest).
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>80
+The total cost of the event will be: $396.14.
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="test-result-passed">
+                <div class="content-wrapper">
+                    <div class="result-header">
+                        <h2>Test Doubled Clean</h2>
+                        <div class="result-subheader">
+                            <div class="status">
+                                <h2>Status:</h2> Passed
+                            </div>
+                            <div class="score">
+                                <h2>Score:</h2> 0 / 0
+                            </div>
+                        </div>
+                    </div>
+                    
+                        <div class="comparison-container-empty"></div>
+                    
+                </div>
+            </div>
+            
+            <div class="test-result-failed">
+                <div class="content-wrapper">
+                    <div class="result-header">
+                        <h2>Test 15 Person 35 Tip Doubled</h2>
+                        <div class="result-subheader">
+                            <div class="status">
+                                <h2>Status:</h2> Failed
+                            </div>
+                            <div class="score">
+                                <h2>Score:</h2> 2.072 / 4.0
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-container">
+                        <div class="section">
+                            <p><strong>Observed (Your Actual Output)</strong></p>
+                            <div class="content">
+                                <pre>15
+1 large pizzas, 0 medium pizzas, and <span style="background-color: rgba(100, 149, 237, 0.4)">0</span> small pizzas will be needed.
+A total of 1<span style="background-color: rgba(100, 149, 237, 0.4)">2</span><span style="background-color: rgba(100, 149, 237, 0.4)">5</span><span style="background-color: rgba(100, 149, 237, 0.4)">6</span>.<span style="background-color: rgba(100, 149, 237, 0.4)">6</span><span style="background-color: rgba(100, 149, 237, 0.4)">4</span> square inches of pizza will be ordered (<span style="background-color: rgba(100, 149, 237, 0.4)">8</span>3.<span style="background-color: rgba(100, 149, 237, 0.4)">7</span><span style="background-color: rgba(100, 149, 237, 0.4)">8</span> per guest).
+35
+The total cost of the event will be: $<span style="background-color: rgba(100, 149, 237, 0.4)">3</span>9.<span style="background-color: rgba(100, 149, 237, 0.4)">6</span><span style="background-color: rgba(100, 149, 237, 0.4)">4</span>.
+</pre>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <p><strong>Expected (Correct Output)</strong></p>
+                            <div class="content">
+                                <pre><span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>15
+1 large pizzas, 0 medium pizzas, and <span style="background-color: rgba(100, 149, 237, 0.4)">1</span> small pizzas will be needed.
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>A total of 1<span style="background-color: rgba(100, 149, 237, 0.4)">7</span><span style="background-color: rgba(100, 149, 237, 0.4)">0</span><span style="background-color: rgba(100, 149, 237, 0.4)">9</span>.<span style="background-color: rgba(100, 149, 237, 0.4)">0</span><span style="background-color: rgba(100, 149, 237, 0.4)">3</span> square inches of pizza will be ordered (<span style="background-color: rgba(100, 149, 237, 0.4)">1</span><span style="background-color: rgba(255, 99, 71, 0.4)">1</span>3.<span style="background-color: rgba(100, 149, 237, 0.4)">9</span><span style="background-color: rgba(100, 149, 237, 0.4)">4</span> per guest).
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>35
+The total cost of the event will be: $<span style="background-color: rgba(100, 149, 237, 0.4)">5</span>9.<span style="background-color: rgba(100, 149, 237, 0.4)">2</span><span style="background-color: rgba(100, 149, 237, 0.4)">9</span>.
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="test-result-failed">
+                <div class="content-wrapper">
+                    <div class="result-header">
+                        <h2>Test 17 Person 10 Tip Doubled</h2>
+                        <div class="result-subheader">
+                            <div class="status">
+                                <h2>Status:</h2> Failed
+                            </div>
+                            <div class="score">
+                                <h2>Score:</h2> 1.984 / 4.0
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-container">
+                        <div class="section">
+                            <p><strong>Observed (Your Actual Output)</strong></p>
+                            <div class="content">
+                                <pre>17
+1 large pizzas, 0 medium pizzas, and <span style="background-color: rgba(100, 149, 237, 0.4)">1</span> small pizzas will be needed.
+A total of <span style="background-color: rgba(100, 149, 237, 0.4)">1</span><span style="background-color: rgba(100, 149, 237, 0.4)">7</span><span style="background-color: rgba(100, 149, 237, 0.4)">0</span><span style="background-color: rgba(100, 149, 237, 0.4)">9</span>.<span style="background-color: rgba(100, 149, 237, 0.4)">0</span><span style="background-color: rgba(100, 149, 237, 0.4)">3</span> square inches of pizza will be ordered (1<span style="background-color: rgba(100, 149, 237, 0.4)">0</span><span style="background-color: rgba(100, 149, 237, 0.4)">0</span>.<span style="background-color: rgba(100, 149, 237, 0.4)">5</span><span style="background-color: rgba(100, 149, 237, 0.4)">3</span> per guest).
+10
+The total cost of the event will be: $<span style="background-color: rgba(100, 149, 237, 0.4)">4</span><span style="background-color: rgba(100, 149, 237, 0.4)">8</span>.3<span style="background-color: rgba(100, 149, 237, 0.4)">1</span>.
+</pre>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <p><strong>Expected (Correct Output)</strong></p>
+                            <div class="content">
+                                <pre><span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>17
+1 large pizzas, 0 medium pizzas, and <span style="background-color: rgba(100, 149, 237, 0.4)">2</span> small pizzas will be needed.
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>A total of <span style="background-color: rgba(100, 149, 237, 0.4)">2</span><span style="background-color: rgba(100, 149, 237, 0.4)">1</span><span style="background-color: rgba(100, 149, 237, 0.4)">6</span><span style="background-color: rgba(100, 149, 237, 0.4)">1</span>.<span style="background-color: rgba(100, 149, 237, 0.4)">4</span><span style="background-color: rgba(100, 149, 237, 0.4)">2</span> square inches of pizza will be ordered (1<span style="background-color: rgba(100, 149, 237, 0.4)">2</span><span style="background-color: rgba(100, 149, 237, 0.4)">7</span>.<span style="background-color: rgba(100, 149, 237, 0.4)">1</span><span style="background-color: rgba(100, 149, 237, 0.4)">4</span> per guest).
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>10
+The total cost of the event will be: $<span style="background-color: rgba(100, 149, 237, 0.4)">6</span><span style="background-color: rgba(100, 149, 237, 0.4)">4</span>.3<span style="background-color: rgba(100, 149, 237, 0.4)">3</span>.
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+        </main>
+        <footer>
+            <p>Generated by byu_pytest_utils on September 04, 2025 10:53 AM</p>
+        </footer>
+    </div>
+</body>
+</html>
