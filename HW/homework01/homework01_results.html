@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison Report</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            flex-direction: column;
+            font-family: monospace, sans-serif;
+            line-height: 1.4;
+            background-color: #f9f9f9;
+            color: rgb(0, 46, 93);
+        }
+        .page-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        header, footer {
+            background-color: rgb(0, 46, 93);
+            color: white;
+            text-align: center;
+        }
+        header h1, footer p {
+            margin: 0;
+            padding: 5px 0;
+        }
+        header {
+            margin-bottom: 10px;
+        }
+        footer {
+            margin-top: 10px;
+        }
+        h2 {
+            padding: 5px 0;
+        }
+        .test-summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 50px;
+            font-size: 1em;
+            font-weight: bold;
+        }
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+        .test-result-passed, .test-result-failed {
+            padding: 5px;
+            border-radius: 5px;
+            margin: 10px 50px;
+            position: relative;
+        }
+        .test-result-passed {
+            background-color: #d4edda;
+            border: 2px solid #c3e6cb;
+        }
+        .test-result-failed {
+            background-color: #f8d7da;
+            border: 2px solid #f5c6cb;
+        }
+        .result-header {
+            text-align: center;
+        }
+        .result-header h2 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+        .result-subheader {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 5px;
+            font-size: 1em;
+            padding: 0 10px;
+        }
+        .result-subheader .status, .result-subheader .score {
+            font-size: 1em;
+        }
+        .result-subheader .status h2, .result-subheader .score h2 {
+            display: inline;
+            font-size: 1em;
+            margin-right: 5px;
+        }
+        .comparison-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 10px;
+            padding: 0 10px;
+
+        }
+        @media (max-width: 1500px) {
+            .comparison-container {
+                flex-direction: column;
+            }
+        }
+        .section {
+            flex: 1;
+            min-width: 400px;
+        }
+        .section strong {
+            font-size: 1em;
+        }
+        .content {
+            background: rgb(245, 245, 245);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            overflow-x: auto;
+        }
+        .test-info {
+            margin: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <header>
+            <h1>Homework01 Results</h1>
+        </header>
+        <main class="main-content">
+            <div class="test-summary">
+                <span>Passed: 6 / 7</span>
+                <span>Total Score: 38 / 45</span>
+            </div>
+            
+            
+            <div class="test-result-passed">
+                <div class="content-wrapper">
+                    <div class="result-header">
+                        <h2>Test Check Row Types</h2>
+                        <div class="result-subheader">
+                            <div class="status">
+                                <h2>Status:</h2> Passed
+                            </div>
+                            <div class="score">
+                                <h2>Score:</h2> 2 / 2
+                            </div>
+                        </div>
+                    </div>
+                    
+                        <div class="comparison-container-empty"></div>
+                    
+                </div>
+            </div>
+            
+            <div class="test-result-passed">
+                <div class="content-wrapper">
+                    <div class="result-header">
+                        <h2>Test Student Scores</h2>
+                        <div class="result-subheader">
+                            <div class="status">
+                                <h2>Status:</h2> Passed
+                            </div>
+                            <div class="score">
+                                <h2>Score:</h2> 7 / 7
+                            </div>
+                        </div>
+                    </div>
+                    
+                        <div class="comparison-container-empty"></div>
+                    
+                </div>
+            </div>
+            
+            <div class="test-result-passed">
+                <div class="content-wrapper">
+                    <div class="result-header">
+                        <h2>Test Chosen Students</h2>
+                        <div class="result-subheader">
+                            <div class="status">
+                                <h2>Status:</h2> Passed
+                            </div>
+                            <div class="score">
+                                <h2>Score:</h2> 7 / 7
+                            </div>
+                        </div>
+                    </div>
+                    
+                        <div class="comparison-container-empty"></div>
+                    
+                </div>
+            </div>
+            
+            <div class="test-result-passed">
+                <div class="content-wrapper">
+                    <div class="result-header">
+                        <h2>Test Outliers</h2>
+                        <div class="result-subheader">
+                            <div class="status">
+                                <h2>Status:</h2> Passed
+                            </div>
+                            <div class="score">
+                                <h2>Score:</h2> 7 / 7
+                            </div>
+                        </div>
+                    </div>
+                    
+                        <div class="comparison-container-empty"></div>
+                    
+                </div>
+            </div>
+            
+            <div class="test-result-passed">
+                <div class="content-wrapper">
+                    <div class="result-header">
+                        <h2>Test Chosen Improved</h2>
+                        <div class="result-subheader">
+                            <div class="status">
+                                <h2>Status:</h2> Passed
+                            </div>
+                            <div class="score">
+                                <h2>Score:</h2> 7 / 7
+                            </div>
+                        </div>
+                    </div>
+                    
+                        <div class="comparison-container-empty"></div>
+                    
+                </div>
+            </div>
+            
+            <div class="test-result-passed">
+                <div class="content-wrapper">
+                    <div class="result-header">
+                        <h2>Test Composite Chosen</h2>
+                        <div class="result-subheader">
+                            <div class="status">
+                                <h2>Status:</h2> Passed
+                            </div>
+                            <div class="score">
+                                <h2>Score:</h2> 8 / 8
+                            </div>
+                        </div>
+                    </div>
+                    
+                        <div class="comparison-container-empty"></div>
+                    
+                </div>
+            </div>
+            
+            <div class="test-result-failed">
+                <div class="content-wrapper">
+                    <div class="result-header">
+                        <h2>Test Better Improved</h2>
+                        <div class="result-subheader">
+                            <div class="status">
+                                <h2>Status:</h2> Failed
+                            </div>
+                            <div class="score">
+                                <h2>Score:</h2> 0 / 7
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-container">
+                        <div class="section">
+                            <p><strong>Output</strong></p>
+                            <div class="content">
+                                <pre>run_program = None
+
+    @max_score(7)
+    def test_better_improved(run_program):
+        if run_program != None:
+            raise run_program
+>       compare_files(this_folder / "better_improved.csv", test_files / "better_improved.key.csv")
+
+test_admissions.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+output_file = PosixPath('/Users/sethleavitt/PycharmProjects/CS111/HW/homework01/better_improved.csv')
+expected_file = PosixPath('/Users/sethleavitt/PycharmProjects/CS111/HW/homework01/test_files/better_improved.key.csv')
+
+    def compare_files(output_file: Path, expected_file: Path):
+        try:
+            with open(output_file, 'r') as out_file, open(expected_file, 'r') as expect_file:
+>               assert out_file.read() == expect_file.read(), "Output file does not match expected file"
+E               AssertionError: Output file does not match expected file
+E               assert Observed (left) == Expected (right)
+E                 Abbess Horror ,1300.0,3.61,10.0,7.0             | Abbess Horror ,1300.0,3.61,10.0,7.0            
+E                 Adele Hawthorne ,1400.0,3.67,0.0,9.0            | Adele Hawthorne ,1400.0,3.67,0.0,9.0           
+E                 Adelicia von Krupp ,900.0,4.0,5.0,2.0           | Adelicia von Krupp ,900.0,4.0,5.0,2.0          
+E                 Adriana Soria ,1360.0,3.19,0.0,9.0              | Adriana Soria ,1360.0,3.19,0.0,9.0             
+E                 Adriana Princess,1180.0,2.93,2.0,7.0            | Adriana Princess,1180.0,2.93,2.0,7.0           
+E                 Adrienne Frost ,1180.0,3.0,6.0,7.0              | Adrienne Frost ,1180.0,3.0,6.0,7.0             
+E                 Agatha Timly ,1140.0,2.98,10.0,8.0              | Agatha Timly ,1140.0,2.98,10.0,8.0             
+E                 Agent Anesthesia ,1190.0,3.08,1.0,7.0           | Agent Anesthesia ,1190.0,3.08,1.0,7.0          
+E                 Aghanne Buffalo,1400.0,3.39,10.0,9.0            | Aghanne Buffalo,1400.0,3.39,10.0,9.0           
+E                 Aguja Buffalo,1310.0,3.92,8.0,4.0               | Aguja Buffalo,1310.0,3.92,8.0,4.0              
+E                 Alaisa Ruatha Pethnan ,1100.0,3.22,10.0,3.0     | Alaisa Ruatha Pethnan ,1100.0,3.22,10.0,3.0    
+E                 Alchemist Student,1150.0,4.6,9.0,2.0            | Alchemist Student,1150.0,4.6,9.0,2.0           
+E                 Aldebron James,1220.0,3.08,7.0,10.0             | Aldebron James,1220.0,3.08,7.0,10.0            
+E                 Aleksandra Nikolaevna ,1340.0,4.0,2.0,4.0       | Aleksandra Nikolaevna ,1340.0,4.0,2.0,4.0      
+E                 Alflyse Freshman,1400.0,3.44,10.0,2.0           | Alflyse Freshman,1400.0,3.44,10.0,2.0          
+E                 Alice Hayes ,1000.0,4.2,3.0,3.0                 | Alice Hayes ,1000.0,4.2,3.0,3.0                
+E                 Alice Tremaine ,1420.0,3.75,10.0,1.0            | Alice Tremaine ,1420.0,3.75,10.0,1.0           
+E                 Alizon Baunacha ,1350.0,3.81,7.0,7.0            | Alizon Baunacha ,1350.0,3.81,7.0,7.0           
+E                 Alkhema Salad,1160.0,3.17,0.0,4.0               | Alkhema Salad,1160.0,3.17,0.0,4.0              
+E                 Allatou Buffalo,1190.0,3.63,3.0,3.0             | Allatou Buffalo,1190.0,3.63,3.0,3.0            
+E                 Amanda Mueller ,1200.0,4.8,0.0,1.0              | Amanda Mueller ,1200.0,4.8,0.0,1.0             
+E                 Amber Alexis ,1250.0,3.35,2.0,9.0               | Amber Alexis ,1250.0,3.35,2.0,9.0              
+E                 Amie Zamborano ,1420.0,4.2,3.0,2.0              | Amie Zamborano ,1420.0,4.2,3.0,2.0             
+E                 Amity Hunter ,1380.0,3.61,0.0,7.0               | Amity Hunter ,1380.0,3.61,0.0,7.0              
+E                 Anastasia Kravinoff ,1500.0,3.74,0.0,0.0        | Anastasia Kravinoff ,1500.0,3.74,0.0,0.0       
+E                 Anastasia Summit ,1240.0,3.22,3.0,10.0          | Anastasia Summit ,1240.0,3.22,3.0,10.0         
+E                 Andrea Haggard ,1090.0,3.29,5.0,8.0             | Andrea Haggard ,1090.0,3.29,5.0,8.0            
+E                 Andrea Janson ,1530.0,3.78,7.0,4.0              | Andrea Janson ,1530.0,3.78,7.0,4.0             
+E                 Andrea Roarke ,1310.0,3.35,7.0,9.0              | Andrea Roarke ,1310.0,3.35,7.0,9.0             
+E                 Andrea von Strucker ,1180.0,3.4,9.0,9.0         | Andrea von Strucker ,1180.0,3.4,9.0,9.0        
+E                 Angela Bradford ,1520.0,4.35,5.0,3.0            | Angela Bradford ,1520.0,4.35,5.0,3.0           
+E                 Angela Golden ,1200.0,4.9,10.0,1.0              | Angela Golden ,1200.0,4.9,10.0,1.0             
+E                 Angelina Brancale ,1190.0,3.05,8.0,7.0          | Angelina Brancale ,1190.0,3.05,8.0,7.0         
+E                 Ann Fraley ,1180.0,3.13,8.0,6.0                 | Anita Ehren ,1260.0,2.9,0.0,0.0                
+E                 Anne Mutant ,1330.0,3.32,8.0,8.0                | Ann Fraley ,1180.0,3.13,8.0,6.0                
+E                 Anne Marie Cortez ,1210.0,3.15,0.0,9.0          | Anne Mutant ,1330.0,3.32,8.0,8.0               
+E                 Anzhela Federova ,1280.0,3.31,10.0,3.0          | Anne Marie Cortez ,1210.0,3.15,0.0,9.0         
+E                 Aranda Charboneau ,1260.0,2.94,1.0,9.0          | Anzhela Federova ,1280.0,3.31,10.0,3.0         
+E                 Araoha Tepania ,1140.0,3.45,1.0,10.0            | Aranda Charboneau ,1260.0,2.94,1.0,9.0         
+E                 Ariana Saddiqi ,1250.0,3.46,4.0,3.0             | Araoha Tepania ,1140.0,3.45,1.0,10.0           
+E                 Arianna Jankos ,1160.0,2.97,10.0,9.0            | Ariana Saddiqi ,1250.0,3.46,4.0,3.0            
+E                 Asahiri Aoki ,1290.0,3.35,0.0,0.0               | Arianna Jankos ,1160.0,2.97,10.0,9.0           
+E                 Astrid Bloom ,1360.0,3.86,8.0,3.0               | Asahiri Aoki ,1290.0,3.35,0.0,0.0              
+E                 Astrid Mordo ,1080.0,3.13,10.0,5.0              | Astrid Bloom ,1360.0,3.86,8.0,3.0              
+E                 Augusta Seger ,1370.0,3.37,5.0,4.0              | Astrid Mordo ,1080.0,3.13,10.0,5.0             
+E                 Aunt Serr ,1170.0,3.27,4.0,10.0                 | Augusta Seger ,1370.0,3.37,5.0,4.0             
+E                 Ayla Ranefer ,1370.0,4.0,3.0,7.0                | Aunt Serr ,1170.0,3.27,4.0,10.0                
+E                 Baba Yaga ,1250.0,3.19,0.0,10.0                 | Ayla Ranefer ,1370.0,4.0,3.0,7.0               
+E                 Baylee Ann ,1380.0,3.65,5.0,3.0                 | Baba Yaga ,1250.0,3.19,0.0,10.0                
+E                 Belle Raven ,1100.0,3.32,8.0,6.0                | Baylee Ann ,1380.0,3.65,5.0,3.0                
+E                 Benazir Kaur ,950.0,4.1,0.0,2.0                 | Belle Raven ,1100.0,3.32,8.0,6.0               
+E                 Betty Sumitro ,1560.0,3.85,10.0,8.0             | Benazir Kaur ,950.0,4.1,0.0,2.0                
+E                 Betty Swanson ,1430.0,4.0,1.0,2.0               | Betty Sumitro ,1560.0,3.85,10.0,8.0            
+E                 Beverly Cross ,1420.0,3.59,5.0,1.0              | Betty Swanson ,1430.0,4.0,1.0,2.0              
+E                 Bianca LaNeige ,1330.0,3.62,3.0,9.0             | Beverly Cross ,1420.0,3.59,5.0,1.0             
+E                 Big Mother ,1170.0,3.3,6.0,2.0                  | Bianca LaNeige ,1330.0,3.62,3.0,9.0            
+E                 Black Knight,1460.0,3.69,9.0,10.0               | Black Knight,1460.0,3.69,9.0,10.0              
+E                 Black Lotus ,1310.0,3.73,3.0,5.0                | Black Lotus ,1310.0,3.73,3.0,5.0               
+E                 Black Mariah ,1320.0,4.0,7.0,6.0                | Black Mariah ,1320.0,4.0,7.0,6.0               
+E                 Bloody Bess ,1490.0,4.0,10.0,6.0                | Bloody Bess ,1490.0,4.0,10.0,6.0               
+E                 Bloody Mary ,1290.0,3.45,8.0,9.0                | Bloody Mary ,1290.0,3.45,8.0,9.0               
+E                 Blow Dryer ,1340.0,4.0,10.0,4.0                 | Blow Dryer ,1340.0,4.0,10.0,4.0                
+E                 Bombardier ,1290.0,3.36,9.0,8.0                 | Bombardier ,1290.0,3.36,9.0,8.0                
+E                 Boudica Gorman ,1350.0,4.0,3.0,8.0              | Boudica Gorman ,1350.0,4.0,3.0,8.0             
+E                 Bouncing Betty ,1100.0,3.12,9.0,10.0            | Bouncing Betty ,1100.0,3.12,9.0,10.0           
+E                 Bridget Malone ,1410.0,4.0,7.0,10.0             | Bridget Malone ,1410.0,4.0,7.0,10.0            
+E                 Brigitte Lahti ,1140.0,2.9,5.0,7.0              | Brigitte Lahti ,1140.0,2.9,5.0,7.0             
+E                 Bronwen Gryffn ,1160.0,3.07,4.0,6.0             | Bronwen Gryffn ,1160.0,3.07,4.0,6.0            
+E                 Calypso Ezili ,1150.0,4.7,2.0,3.0               | Calypso Ezili ,1150.0,4.7,2.0,3.0              
+E                 Carmella Unuscione ,1090.0,2.98,6.0,10.0        | Carmella Unuscione ,1090.0,2.98,6.0,10.0       
+E                 Carol Hines ,1370.0,4.1,6.0,8.0                 | Carol Hines ,1370.0,4.1,6.0,8.0                
+E                 Carolina Washington ,1330.0,3.48,1.0,2.0        | Caroline le Fay ,1370.0,3.28,0.0,7.0           
+E                 Caroline le Fay ,1370.0,3.28,0.0,7.0            | Carolyn Trainer ,1520.0,4.0,0.0,10.0           
+E                 Carolyn Trainer ,1520.0,4.0,0.0,10.0            | Cassandra Nova Xavier ,1520.0,3.83,10.0,0.0    
+E                 Cassandra Nova Xavier ,1520.0,3.83,10.0,0.0     | Cassandra Pike ,1220.0,3.64,7.0,6.0            
+E                 Cassandra Pike ,1220.0,3.64,7.0,6.0             | Cassandra Romulus ,1550.0,3.9,6.0,3.0          
+E                 Cassandra Romulus ,1550.0,3.9,6.0,3.0           | Cat's Paw ,1280.0,3.44,5.0,3.0                 
+E                 Cat's Paw ,1280.0,3.44,5.0,3.0                  | Catastrophe Jen ,1110.0,3.33,2.0,6.0           
+E                 Catastrophe Jen ,1110.0,3.33,2.0,6.0            | Catherine D'Antan ,1180.0,3.52,5.0,9.0         
+E                 Catherine D'Antan ,1180.0,3.52,5.0,9.0          | Catherine Saint ,1240.0,3.57,6.0,9.0           
+E                 Catherine Saint ,1240.0,3.57,6.0,9.0            | Catherine Wilder ,1120.0,2.88,0.0,5.0          
+E                 Catherine Wilder ,1120.0,2.88,0.0,5.0           | Celestia Denton ,1310.0,3.15,10.0,10.0         
+E                 Celestia Denton ,1310.0,3.15,10.0,10.0          | Chancellor Cassandra ,1400.0,3.57,7.0,2.0      
+E                 Chancellor Cassandra ,1400.0,3.57,7.0,2.0       | Charlotte Witter ,1290.0,3.33,0.0,4.0          
+E                 Charlotte Witter ,1290.0,3.33,0.0,4.0           | Cheer Chadwick ,1150.0,4.7,6.0,4.0             
+E                 Cheer Chadwick ,1150.0,4.7,6.0,4.0              | Chiquita Tarantula ,1450.0,3.95,6.0,7.0        
+E                 Chiquita Tarantula ,1450.0,3.95,6.0,7.0         | Christina Carr ,1000.0,2.97,8.0,10.0           
+E                 Christina Carr ,1000.0,2.97,8.0,10.0            | Claudine Renko ,1170.0,3.13,7.0,4.0            
+E                 Claudine Renko ,1170.0,3.13,7.0,4.0             | Clemence Duval ,1180.0,2.93,5.0,9.0            
+E                 Clemence Duval ,1180.0,2.93,5.0,9.0             | Coral Ravens,1370.0,3.45,10.0,8.0              
+E                 Coral Ravens,1370.0,3.45,10.0,8.0               | Countess Kyra ,1160.0,3.08,0.0,6.0             
+E                 Countess Kyra ,1160.0,3.08,0.0,6.0              | Countess Mara ,1140.0,3.41,3.0,10.0            
+E                 Countess Mara ,1140.0,3.41,3.0,10.0             | Cristal Lemieux ,1310.0,3.22,0.0,5.0           
+E                 Cristal Lemieux ,1310.0,3.22,0.0,5.0            | Criti Noll ,1300.0,3.84,3.0,4.0                
+E                 Criti Noll ,1300.0,3.84,3.0,4.0                 | Cylla Markham ,1490.0,3.99,1.0,5.0             
+E                 Cylla Markham ,1490.0,3.99,1.0,5.0              | Cyndi Legion,1250.0,3.45,3.0,10.0              
+E                 Cyndi Legion,1250.0,3.45,3.0,10.0               | Dagny Forrester ,1460.0,3.72,8.0,6.0           
+E                 Dagny Forrester ,1460.0,3.72,8.0,6.0            | Daisy Villain ,1510.0,3.7,3.0,0.0              
+E                 Daisy Villain ,1510.0,3.7,3.0,0.0               | Dame Kackle ,1060.0,2.92,0.0,9.0               
+E                 Dame Kackle ,1060.0,2.92,0.0,9.0                | Dancing Water ,1410.0,3.74,8.0,6.0             
+E                 Dancing Water ,1410.0,3.74,8.0,6.0              | Danielle Forte ,1010.0,4.25,6.0,4.0            
+E                 Danielle Forte ,1010.0,4.25,6.0,4.0             | Danielle Nicolle ,1470.0,3.88,9.0,4.0          
+E                 Danielle Nicolle ,1470.0,3.88,9.0,4.0           | Elena King ,1380.0,3.38,10.0,4.0               
+E                 Elena King ,1380.0,3.38,10.0,4.0                | Elena von Lundt ,1190.0,3.54,8.0,1.0           
+E                 Elena von Lundt ,1190.0,3.54,8.0,1.0            | Eleven Rupinski,1410.0,3.74,7.0,0.0            
+E                 Eleven Rupinski,1410.0,3.74,7.0,0.0             | Elianne Turac ,1310.0,3.19,1.0,9.0             
+E                 Elianne Turac ,1310.0,3.19,1.0,9.0              | Elinor von Drei ,1080.0,3.15,7.0,4.0           
+E                 Elinor von Drei ,1080.0,3.15,7.0,4.0            | Elisbeth von Strucker ,1270.0,3.17,0.0,1.0     
+E                 Elisbeth von Strucker ,1270.0,3.17,0.0,1.0      | Elise Winters ,1190.0,2.79,5.0,7.0             
+E                 Elise Winters ,1190.0,2.79,5.0,7.0              | Elizabeth Bliss ,1140.0,3.4,8.0,7.0            
+E                 Elizabeth Bliss ,1140.0,3.4,8.0,7.0             | Elizabeth Rawson ,1400.0,3.57,6.0,4.0          
+E                 Elizabeth Rawson ,1400.0,3.57,6.0,4.0           | Elspeth Cromwell ,1590.0,4.0,3.0,2.0           
+E                 Elspeth Cromwell ,1590.0,4.0,3.0,2.0            | Elyse Nelson ,1190.0,3.4,1.0,9.0               
+E                 Elyse Nelson ,1190.0,3.4,1.0,9.0                | Elysia Smith,1220.0,3.58,5.0,9.0               
+E                 Elysia Smith,1220.0,3.58,5.0,9.0                | Emma Frost ,1470.0,3.93,7.0,8.0                
+E                 Emma Frost ,1470.0,3.93,7.0,8.0                 | Emma Steed ,1420.0,3.52,7.0,1.0                
+E                 Emma Steed ,1420.0,3.52,7.0,1.0                 | Empress Brood ,1380.0,3.94,10.0,0.0            
+E                 Empress Brood ,1380.0,3.94,10.0,0.0             | Eradica Smith,1260.0,3.4,10.0,2.0              
+E                 Eradica Smith,1260.0,3.4,10.0,2.0               | Ereshkigal Goddess ,1380.0,3.4,5.0,3.0         
+E                 Ereshkigal Goddess ,1380.0,3.4,5.0,3.0          | Erica Fortune ,1410.0,3.43,1.0,10.0            
+E                 Erica Fortune ,1410.0,3.43,1.0,10.0             | Erica von Kampf ,1300.0,3.4,10.0,5.0           
+E                 Erica von Kampf ,1300.0,3.4,10.0,5.0            | Erica Wolfmann ,940.0,2.71,9.0,9.0             
+E                 Erica Wolfmann ,940.0,2.71,9.0,9.0              | Erika Benson ,1150.0,2.91,0.0,5.0              
+E                 Erika Benson ,1150.0,2.91,0.0,5.0               | Erin Cicero ,1290.0,3.31,1.0,8.0               
+E                 Erin Cicero ,1290.0,3.31,1.0,8.0                | Lilith Moll ,1330.0,3.74,5.0,10.0              
+E                 Lilith Moll ,1330.0,3.74,5.0,10.0               | Lillian von Loont ,1280.0,3.38,0.0,4.0         
+E                 Lillian von Loont ,1280.0,3.38,0.0,4.0          | Lily Cromwell ,1510.0,3.94,5.0,1.0             
+E                 Lily Cromwell ,1510.0,3.94,5.0,1.0              | Linda Lewis,1440.0,3.69,2.0,5.0                
+E                 Linda Lewis,1440.0,3.69,2.0,5.0                 | Linda Wei ,980.0,2.86,0.0,3.0                  
+E                 Lisabeth Borden ,1260.0,3.58,6.0,4.0            | Lisabeth Borden ,1260.0,3.58,6.0,4.0           
+E                 Livilla Smith,1280.0,3.49,10.0,2.0              | Livilla Smith,1280.0,3.49,10.0,2.0             
+E                 Liza Pyne ,1470.0,3.82,8.0,5.0                  | Liza Pyne ,1470.0,3.82,8.0,5.0                 
+E                 Llyra Morris ,1200.0,3.13,4.0,8.0               | Llyra Morris ,1200.0,3.13,4.0,8.0              
+E                 Lois Smith,1220.0,3.56,3.0,10.0                 | Lois Smith,1220.0,3.56,3.0,10.0                
+E                 Lola Smith,1200.0,4.9,10.0,1.0                  | Lola Smith,1200.0,4.9,10.0,1.0                 
+E                 Lorelei Asgardian,1440.0,4.0,3.0,10.0           | Lorelei Asgardian,1440.0,4.0,3.0,10.0          
+E                 Lorelei Riciardi ,1210.0,3.24,9.0,5.0           | Lorelei Riciardi ,1210.0,3.24,9.0,5.0          
+E                 Lorena Haam ,1480.0,3.77,0.0,10.0               | Lorena Haam ,1480.0,3.77,0.0,10.0              
+E                 Lorina Dodson ,1420.0,4.0,10.0,8.0              | Lorina Dodson ,1420.0,4.0,10.0,8.0             
+E                 Lottie Eikenski ,1390.0,3.62,9.0,5.0            | Lottie Eikenski ,1390.0,3.62,9.0,5.0           
+E                 Lotus Newmark ,1200.0,3.51,2.0,9.0              | Lotus Newmark ,1200.0,3.51,2.0,9.0             
+E                 Lucia von Bardas ,1380.0,3.48,9.0,10.0          | Lou Dade ,1160.0,2.81,0.0,1.0                  
+E                 Luciane d'Hiver ,1320.0,3.43,0.0,6.0            | Lucia von Bardas ,1380.0,3.48,9.0,10.0         
+E                 Lucrezia Borgia ,1220.0,3.53,5.0,8.0            | Luciane d'Hiver ,1320.0,3.43,0.0,6.0           
+E                 Lupa Lupoff ,1310.0,3.37,4.0,5.0                | Lucrezia Borgia ,1220.0,3.53,5.0,8.0           
+E                 Lynn Church ,1380.0,3.33,10.0,10.0              | Lupa Lupoff ,1310.0,3.37,4.0,5.0               
+E                 Lyudmila Antonovna Kudrin ,1070.0,3.01,1.0,10.0 | Lynn Church ,1380.0,3.33,10.0,10.0             
+E                 Ma Mayhem ,1380.0,4.3,8.0,1.0                   | Lyudmila Antonovna Kudrin ,1070.0,3.01,1.0,10.0
+E                 Madam Qwa ,1560.0,3.88,10.0,3.0                 | Ma Mayhem ,1380.0,4.3,8.0,1.0                  
+E                 Madam Rapier ,1400.0,4.0,9.0,5.0                | Madam Qwa ,1560.0,3.88,10.0,3.0                
+E                 Madam Satan ,1320.0,3.84,4.0,5.0                | Madam Rapier ,1400.0,4.0,9.0,5.0               
+E                 Madam Swabada ,1380.0,3.6,0.0,10.0              | Madam Satan ,1320.0,3.84,4.0,5.0               
+E                 Madam Web ,1220.0,3.61,6.0,10.0                 | Madam Swabada ,1380.0,3.6,0.0,10.0             
+E                 Madame Hydra,1140.0,3.35,7.0,3.0                | Madam Web ,1220.0,3.61,6.0,10.0                
+E                 Madame Joy ,1260.0,2.94,7.0,5.0                 | Madame Hydra,1140.0,3.35,7.0,3.0               
+E                 Madame la Morte ,1400.0,3.54,6.0,10.0           | Madame Joy ,1260.0,2.94,7.0,5.0                
+E                 Madame Macabre ,1410.0,3.76,4.0,7.0             | Madame la Morte ,1400.0,3.54,6.0,10.0          
+E                 Madame Mauser ,1300.0,3.59,5.0,3.0              | Madame Macabre ,1410.0,3.76,4.0,7.0            
+E                 Madame Reneau ,1260.0,3.47,6.0,9.0              | Madame Mauser ,1300.0,3.59,5.0,3.0             
+E                 Madelyne Pryor ,1340.0,3.59,10.0,9.0            | Madame Reneau ,1260.0,3.47,6.0,9.0             
+E                 Maggie Langella ,1250.0,3.07,9.0,7.0            | Madelyne Pryor ,1340.0,3.59,10.0,9.0           
+E                 Maguire Beck ,1100.0,3.23,0.0,3.0               | Maggie Langella ,1250.0,3.07,9.0,7.0           
+E                 Majeston Zelia ,1370.0,3.63,9.0,4.0             | Maguire Beck ,1100.0,3.23,0.0,3.0              
+E                 Maki Matsumoto ,1320.0,3.77,5.0,7.0             | Majeston Zelia ,1370.0,3.63,9.0,4.0            
+E                 Malon Estella Reeves ,1140.0,3.2,2.0,10.0       | Maki Matsumoto ,1320.0,3.77,5.0,7.0            
+E                 Mamalu Buffalo,1460.0,4.0,1.0,0.0               | Malon Estella Reeves ,1140.0,3.2,2.0,10.0      
+E                 Manchuria Mary ,1500.0,3.92,9.0,1.0             | Mamalu Buffalo,1460.0,4.0,1.0,0.0              
+E                 Mantis Reborn,1560.0,3.89,9.0,0.0               | Manchuria Mary ,1500.0,3.92,9.0,1.0            
+E                 Marabeth Buffalo,1490.0,3.8,7.0,7.0             | Mantis Reborn,1560.0,3.89,9.0,0.0              
+E                 Maraud Buffalo,1320.0,3.54,10.0,4.0             | Marabeth Buffalo,1490.0,3.8,7.0,7.0            
+E                 Marci Camp ,1250.0,3.63,0.0,6.0                 | Maraud Buffalo,1320.0,3.54,10.0,4.0            
+E                 Maria Callasantos ,1380.0,3.34,1.0,10.0         | Marci Camp ,1250.0,3.63,0.0,6.0                
+E                 Marian Pouncy ,1200.0,2.87,1.0,3.0              | Maria Callasantos ,1380.0,3.34,1.0,10.0        
+E                 Marie Batroc ,1180.0,3.38,0.0,6.0               | Marie Batroc ,1180.0,3.38,0.0,6.0
+
+test_admissions.py:37: AssertionError</pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+        </main>
+        <footer>
+            <p>Generated by byu_pytest_utils on September 10, 2025 10:07 AM</p>
+        </footer>
+    </div>
+</body>
+</html>
