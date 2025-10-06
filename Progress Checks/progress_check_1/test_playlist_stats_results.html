@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison Report</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            flex-direction: column;
+            font-family: monospace, sans-serif;
+            line-height: 1.4;
+            background-color: #f9f9f9;
+            color: rgb(0, 46, 93);
+        }
+        .page-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        header, footer {
+            background-color: rgb(0, 46, 93);
+            color: white;
+            text-align: center;
+        }
+        header h1, footer p {
+            margin: 0;
+            padding: 5px 0;
+        }
+        header {
+            margin-bottom: 10px;
+        }
+        footer {
+            margin-top: 10px;
+        }
+        h2 {
+            padding: 5px 0;
+        }
+        .test-summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 50px;
+            font-size: 1em;
+            font-weight: bold;
+        }
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+        .test-result-passed, .test-result-failed {
+            padding: 5px;
+            border-radius: 5px;
+            margin: 10px 50px;
+            position: relative;
+        }
+        .test-result-passed {
+            background-color: #d4edda;
+            border: 2px solid #c3e6cb;
+        }
+        .test-result-failed {
+            background-color: #f8d7da;
+            border: 2px solid #f5c6cb;
+        }
+        .result-header {
+            text-align: center;
+        }
+        .result-header h2 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+        .result-subheader {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 5px;
+            font-size: 1em;
+            padding: 0 10px;
+        }
+        .result-subheader .status, .result-subheader .score {
+            font-size: 1em;
+        }
+        .result-subheader .status h2, .result-subheader .score h2 {
+            display: inline;
+            font-size: 1em;
+            margin-right: 5px;
+        }
+        .comparison-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 10px;
+            padding: 0 10px;
+
+        }
+        @media (max-width: 1500px) {
+            .comparison-container {
+                flex-direction: column;
+            }
+        }
+        .section {
+            flex: 1;
+            min-width: 400px;
+        }
+        .section strong {
+            font-size: 1em;
+        }
+        .content {
+            background: rgb(245, 245, 245);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            overflow-x: auto;
+        }
+        .test-info {
+            margin: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <header>
+            <h1>Test Playlist Stats Results</h1>
+        </header>
+        <main class="main-content">
+            <div class="test-summary">
+                <span>Passed: 2 / 3</span>
+                <span>Total Score: 99.9 / 100.0</span>
+            </div>
+            
+            
+            <div class="test-result-passed">
+                <div class="content-wrapper">
+                    <div class="result-header">
+                        <h2>Core</h2>
+                        <div class="result-subheader">
+                            <div class="status">
+                                <h2>Status:</h2> Passed
+                            </div>
+                            <div class="score">
+                                <h2>Score:</h2> 75.0 / 75.0
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="comparison-container">
+                        <div class="section">
+                            <p><strong>Observed (Your Actual Output)</strong></p>
+                            <div class="content">
+                                <pre>test_files/playlist1.csv
+The playlist has 40 songs.
+The first song is Concerning Hobbits by Howard Shore.
+The last song is Bring Him Home by Colm Wilkinson.
+<span style="background-color: rgba(50, 205, 50, 0.4)">O</span><span style="background-color: rgba(50, 205, 50, 0.4)">v</span><span style="background-color: rgba(50, 205, 50, 0.4)">e</span><span style="background-color: rgba(50, 205, 50, 0.4)">r</span><span style="background-color: rgba(50, 205, 50, 0.4)">t</span><span style="background-color: rgba(50, 205, 50, 0.4)">u</span><span style="background-color: rgba(50, 205, 50, 0.4)">r</span><span style="background-color: rgba(50, 205, 50, 0.4)">e</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">t</span><span style="background-color: rgba(50, 205, 50, 0.4)">o</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">C</span><span style="background-color: rgba(50, 205, 50, 0.4)">a</span><span style="background-color: rgba(50, 205, 50, 0.4)">n</span><span style="background-color: rgba(50, 205, 50, 0.4)">d</span><span style="background-color: rgba(50, 205, 50, 0.4)">i</span><span style="background-color: rgba(50, 205, 50, 0.4)">d</span><span style="background-color: rgba(50, 205, 50, 0.4)">e</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">w</span><span style="background-color: rgba(50, 205, 50, 0.4)">a</span><span style="background-color: rgba(50, 205, 50, 0.4)">s</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">p</span><span style="background-color: rgba(50, 205, 50, 0.4)">l</span><span style="background-color: rgba(50, 205, 50, 0.4)">a</span><span style="background-color: rgba(50, 205, 50, 0.4)">y</span><span style="background-color: rgba(50, 205, 50, 0.4)">e</span><span style="background-color: rgba(50, 205, 50, 0.4)">d</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">t</span><span style="background-color: rgba(50, 205, 50, 0.4)">h</span><span style="background-color: rgba(50, 205, 50, 0.4)">e</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">m</span><span style="background-color: rgba(50, 205, 50, 0.4)">o</span><span style="background-color: rgba(50, 205, 50, 0.4)">s</span><span style="background-color: rgba(50, 205, 50, 0.4)">t</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">t</span><span style="background-color: rgba(50, 205, 50, 0.4)">i</span><span style="background-color: rgba(50, 205, 50, 0.4)">m</span><span style="background-color: rgba(50, 205, 50, 0.4)">e</span><span style="background-color: rgba(50, 205, 50, 0.4)">s</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">a</span><span style="background-color: rgba(50, 205, 50, 0.4)">t</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">3</span><span style="background-color: rgba(50, 205, 50, 0.4)">3</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">p</span><span style="background-color: rgba(50, 205, 50, 0.4)">l</span><span style="background-color: rgba(50, 205, 50, 0.4)">a</span><span style="background-color: rgba(50, 205, 50, 0.4)">y</span><span style="background-color: rgba(50, 205, 50, 0.4)">s</span><span style="background-color: rgba(50, 205, 50, 0.4)">.</span><span style="background-color: rgba(50, 205, 50, 0.4)">
+</span><span style="background-color: rgba(50, 205, 50, 0.4)">T</span><span style="background-color: rgba(50, 205, 50, 0.4)">h</span><span style="background-color: rgba(50, 205, 50, 0.4)">e</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">p</span><span style="background-color: rgba(50, 205, 50, 0.4)">l</span><span style="background-color: rgba(50, 205, 50, 0.4)">a</span><span style="background-color: rgba(50, 205, 50, 0.4)">y</span><span style="background-color: rgba(50, 205, 50, 0.4)">l</span><span style="background-color: rgba(50, 205, 50, 0.4)">i</span><span style="background-color: rgba(50, 205, 50, 0.4)">s</span><span style="background-color: rgba(50, 205, 50, 0.4)">t</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">i</span><span style="background-color: rgba(50, 205, 50, 0.4)">s</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">3</span><span style="background-color: rgba(50, 205, 50, 0.4)">:</span><span style="background-color: rgba(50, 205, 50, 0.4)">1</span><span style="background-color: rgba(50, 205, 50, 0.4)">2</span><span style="background-color: rgba(50, 205, 50, 0.4)">:</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">5</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">l</span><span style="background-color: rgba(50, 205, 50, 0.4)">o</span><span style="background-color: rgba(50, 205, 50, 0.4)">n</span><span style="background-color: rgba(50, 205, 50, 0.4)">g</span><span style="background-color: rgba(50, 205, 50, 0.4)">.</span><span style="background-color: rgba(50, 205, 50, 0.4)">
+</span></pre>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <p><strong>Expected (Correct Output)</strong></p>
+                            <div class="content">
+                                <pre><span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>test_files/playlist1.csv
+The playlist has 40 songs.
+The first song is Concerning Hobbits by Howard Shore.
+The last song is Bring Him Home by Colm Wilkinson.
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="comparison-container">
+                        <div class="section">
+                            <p><strong>Observed (Your Actual Output)</strong></p>
+                            <div class="content">
+                                <pre>test_files/playlist2.csv
+The playlist has 23 songs.
+The first song is Angels by Joshua Radin.
+The last song is He Lives In You (Reprise) by Jason Raize & Tsidii Le Loka & The Lion King Ensemble.
+<span style="background-color: rgba(50, 205, 50, 0.4)">T</span><span style="background-color: rgba(50, 205, 50, 0.4)">h</span><span style="background-color: rgba(50, 205, 50, 0.4)">e</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">B</span><span style="background-color: rgba(50, 205, 50, 0.4)">o</span><span style="background-color: rgba(50, 205, 50, 0.4)">y</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">W</span><span style="background-color: rgba(50, 205, 50, 0.4)">h</span><span style="background-color: rgba(50, 205, 50, 0.4)">o</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">S</span><span style="background-color: rgba(50, 205, 50, 0.4)">w</span><span style="background-color: rgba(50, 205, 50, 0.4)">a</span><span style="background-color: rgba(50, 205, 50, 0.4)">l</span><span style="background-color: rgba(50, 205, 50, 0.4)">l</span><span style="background-color: rgba(50, 205, 50, 0.4)">o</span><span style="background-color: rgba(50, 205, 50, 0.4)">w</span><span style="background-color: rgba(50, 205, 50, 0.4)">e</span><span style="background-color: rgba(50, 205, 50, 0.4)">d</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">a</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">S</span><span style="background-color: rgba(50, 205, 50, 0.4)">t</span><span style="background-color: rgba(50, 205, 50, 0.4)">a</span><span style="background-color: rgba(50, 205, 50, 0.4)">r</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">w</span><span style="background-color: rgba(50, 205, 50, 0.4)">a</span><span style="background-color: rgba(50, 205, 50, 0.4)">s</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">p</span><span style="background-color: rgba(50, 205, 50, 0.4)">l</span><span style="background-color: rgba(50, 205, 50, 0.4)">a</span><span style="background-color: rgba(50, 205, 50, 0.4)">y</span><span style="background-color: rgba(50, 205, 50, 0.4)">e</span><span style="background-color: rgba(50, 205, 50, 0.4)">d</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">t</span><span style="background-color: rgba(50, 205, 50, 0.4)">h</span><span style="background-color: rgba(50, 205, 50, 0.4)">e</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">m</span><span style="background-color: rgba(50, 205, 50, 0.4)">o</span><span style="background-color: rgba(50, 205, 50, 0.4)">s</span><span style="background-color: rgba(50, 205, 50, 0.4)">t</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">t</span><span style="background-color: rgba(50, 205, 50, 0.4)">i</span><span style="background-color: rgba(50, 205, 50, 0.4)">m</span><span style="background-color: rgba(50, 205, 50, 0.4)">e</span><span style="background-color: rgba(50, 205, 50, 0.4)">s</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">a</span><span style="background-color: rgba(50, 205, 50, 0.4)">t</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">2</span><span style="background-color: rgba(50, 205, 50, 0.4)">7</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">p</span><span style="background-color: rgba(50, 205, 50, 0.4)">l</span><span style="background-color: rgba(50, 205, 50, 0.4)">a</span><span style="background-color: rgba(50, 205, 50, 0.4)">y</span><span style="background-color: rgba(50, 205, 50, 0.4)">s</span><span style="background-color: rgba(50, 205, 50, 0.4)">.</span><span style="background-color: rgba(50, 205, 50, 0.4)">
+</span><span style="background-color: rgba(50, 205, 50, 0.4)">T</span><span style="background-color: rgba(50, 205, 50, 0.4)">h</span><span style="background-color: rgba(50, 205, 50, 0.4)">e</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">p</span><span style="background-color: rgba(50, 205, 50, 0.4)">l</span><span style="background-color: rgba(50, 205, 50, 0.4)">a</span><span style="background-color: rgba(50, 205, 50, 0.4)">y</span><span style="background-color: rgba(50, 205, 50, 0.4)">l</span><span style="background-color: rgba(50, 205, 50, 0.4)">i</span><span style="background-color: rgba(50, 205, 50, 0.4)">s</span><span style="background-color: rgba(50, 205, 50, 0.4)">t</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">i</span><span style="background-color: rgba(50, 205, 50, 0.4)">s</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">1</span><span style="background-color: rgba(50, 205, 50, 0.4)">:</span><span style="background-color: rgba(50, 205, 50, 0.4)">4</span><span style="background-color: rgba(50, 205, 50, 0.4)">1</span><span style="background-color: rgba(50, 205, 50, 0.4)">:</span><span style="background-color: rgba(50, 205, 50, 0.4)">1</span><span style="background-color: rgba(50, 205, 50, 0.4)">7</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">l</span><span style="background-color: rgba(50, 205, 50, 0.4)">o</span><span style="background-color: rgba(50, 205, 50, 0.4)">n</span><span style="background-color: rgba(50, 205, 50, 0.4)">g</span><span style="background-color: rgba(50, 205, 50, 0.4)">.</span><span style="background-color: rgba(50, 205, 50, 0.4)">
+</span></pre>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <p><strong>Expected (Correct Output)</strong></p>
+                            <div class="content">
+                                <pre><span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>test_files/playlist2.csv
+The playlist has 23 songs.
+The first song is Angels by Joshua Radin.
+The last song is He Lives In You (Reprise) by Jason Raize & Tsidii Le Loka & The Lion King Ensemble.
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="comparison-container">
+                        <div class="section">
+                            <p><strong>Observed (Your Actual Output)</strong></p>
+                            <div class="content">
+                                <pre>test_files/playlist3.csv
+The playlist has 64 songs.
+The first song is The White Tree by Howard Shore.
+The last song is Evolution of Magic by Evan Call.
+<span style="background-color: rgba(50, 205, 50, 0.4)">L</span><span style="background-color: rgba(50, 205, 50, 0.4)">o</span><span style="background-color: rgba(50, 205, 50, 0.4)">v</span><span style="background-color: rgba(50, 205, 50, 0.4)">e</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">S</span><span style="background-color: rgba(50, 205, 50, 0.4)">t</span><span style="background-color: rgba(50, 205, 50, 0.4)">o</span><span style="background-color: rgba(50, 205, 50, 0.4)">r</span><span style="background-color: rgba(50, 205, 50, 0.4)">y</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">M</span><span style="background-color: rgba(50, 205, 50, 0.4)">e</span><span style="background-color: rgba(50, 205, 50, 0.4)">e</span><span style="background-color: rgba(50, 205, 50, 0.4)">t</span><span style="background-color: rgba(50, 205, 50, 0.4)">s</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">V</span><span style="background-color: rgba(50, 205, 50, 0.4)">i</span><span style="background-color: rgba(50, 205, 50, 0.4)">v</span><span style="background-color: rgba(50, 205, 50, 0.4)">a</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">L</span><span style="background-color: rgba(50, 205, 50, 0.4)">a</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">V</span><span style="background-color: rgba(50, 205, 50, 0.4)">i</span><span style="background-color: rgba(50, 205, 50, 0.4)">d</span><span style="background-color: rgba(50, 205, 50, 0.4)">a</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">w</span><span style="background-color: rgba(50, 205, 50, 0.4)">a</span><span style="background-color: rgba(50, 205, 50, 0.4)">s</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">p</span><span style="background-color: rgba(50, 205, 50, 0.4)">l</span><span style="background-color: rgba(50, 205, 50, 0.4)">a</span><span style="background-color: rgba(50, 205, 50, 0.4)">y</span><span style="background-color: rgba(50, 205, 50, 0.4)">e</span><span style="background-color: rgba(50, 205, 50, 0.4)">d</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">t</span><span style="background-color: rgba(50, 205, 50, 0.4)">h</span><span style="background-color: rgba(50, 205, 50, 0.4)">e</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">m</span><span style="background-color: rgba(50, 205, 50, 0.4)">o</span><span style="background-color: rgba(50, 205, 50, 0.4)">s</span><span style="background-color: rgba(50, 205, 50, 0.4)">t</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">t</span><span style="background-color: rgba(50, 205, 50, 0.4)">i</span><span style="background-color: rgba(50, 205, 50, 0.4)">m</span><span style="background-color: rgba(50, 205, 50, 0.4)">e</span><span style="background-color: rgba(50, 205, 50, 0.4)">s</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">a</span><span style="background-color: rgba(50, 205, 50, 0.4)">t</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">4</span><span style="background-color: rgba(50, 205, 50, 0.4)">0</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">p</span><span style="background-color: rgba(50, 205, 50, 0.4)">l</span><span style="background-color: rgba(50, 205, 50, 0.4)">a</span><span style="background-color: rgba(50, 205, 50, 0.4)">y</span><span style="background-color: rgba(50, 205, 50, 0.4)">s</span><span style="background-color: rgba(50, 205, 50, 0.4)">.</span><span style="background-color: rgba(50, 205, 50, 0.4)">
+</span><span style="background-color: rgba(50, 205, 50, 0.4)">T</span><span style="background-color: rgba(50, 205, 50, 0.4)">h</span><span style="background-color: rgba(50, 205, 50, 0.4)">e</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">p</span><span style="background-color: rgba(50, 205, 50, 0.4)">l</span><span style="background-color: rgba(50, 205, 50, 0.4)">a</span><span style="background-color: rgba(50, 205, 50, 0.4)">y</span><span style="background-color: rgba(50, 205, 50, 0.4)">l</span><span style="background-color: rgba(50, 205, 50, 0.4)">i</span><span style="background-color: rgba(50, 205, 50, 0.4)">s</span><span style="background-color: rgba(50, 205, 50, 0.4)">t</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">i</span><span style="background-color: rgba(50, 205, 50, 0.4)">s</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">4</span><span style="background-color: rgba(50, 205, 50, 0.4)">:</span><span style="background-color: rgba(50, 205, 50, 0.4)">5</span><span style="background-color: rgba(50, 205, 50, 0.4)">9</span><span style="background-color: rgba(50, 205, 50, 0.4)">:</span><span style="background-color: rgba(50, 205, 50, 0.4)">2</span><span style="background-color: rgba(50, 205, 50, 0.4)">2</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">l</span><span style="background-color: rgba(50, 205, 50, 0.4)">o</span><span style="background-color: rgba(50, 205, 50, 0.4)">n</span><span style="background-color: rgba(50, 205, 50, 0.4)">g</span><span style="background-color: rgba(50, 205, 50, 0.4)">.</span><span style="background-color: rgba(50, 205, 50, 0.4)">
+</span></pre>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <p><strong>Expected (Correct Output)</strong></p>
+                            <div class="content">
+                                <pre><span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>test_files/playlist3.csv
+The playlist has 64 songs.
+The first song is The White Tree by Howard Shore.
+The last song is Evolution of Magic by Evan Call.
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            
+            <div class="test-result-passed">
+                <div class="content-wrapper">
+                    <div class="result-header">
+                        <h2>Advanced</h2>
+                        <div class="result-subheader">
+                            <div class="status">
+                                <h2>Status:</h2> Passed
+                            </div>
+                            <div class="score">
+                                <h2>Score:</h2> 10.0 / 10.0
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="comparison-container">
+                        <div class="section">
+                            <p><strong>Observed (Your Actual Output)</strong></p>
+                            <div class="content">
+                                <pre>test_files/playlist1.csv
+The playlist has 40 songs.
+The first song is Concerning Hobbits by Howard Shore.
+The last song is Bring Him Home by Colm Wilkinson.
+Overture to Candide was played the most times at 33 plays.
+<span style="background-color: rgba(50, 205, 50, 0.4)">T</span><span style="background-color: rgba(50, 205, 50, 0.4)">h</span><span style="background-color: rgba(50, 205, 50, 0.4)">e</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">p</span><span style="background-color: rgba(50, 205, 50, 0.4)">l</span><span style="background-color: rgba(50, 205, 50, 0.4)">a</span><span style="background-color: rgba(50, 205, 50, 0.4)">y</span><span style="background-color: rgba(50, 205, 50, 0.4)">l</span><span style="background-color: rgba(50, 205, 50, 0.4)">i</span><span style="background-color: rgba(50, 205, 50, 0.4)">s</span><span style="background-color: rgba(50, 205, 50, 0.4)">t</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">i</span><span style="background-color: rgba(50, 205, 50, 0.4)">s</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">3</span><span style="background-color: rgba(50, 205, 50, 0.4)">:</span><span style="background-color: rgba(50, 205, 50, 0.4)">1</span><span style="background-color: rgba(50, 205, 50, 0.4)">2</span><span style="background-color: rgba(50, 205, 50, 0.4)">:</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">5</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">l</span><span style="background-color: rgba(50, 205, 50, 0.4)">o</span><span style="background-color: rgba(50, 205, 50, 0.4)">n</span><span style="background-color: rgba(50, 205, 50, 0.4)">g</span><span style="background-color: rgba(50, 205, 50, 0.4)">.</span><span style="background-color: rgba(50, 205, 50, 0.4)">
+</span></pre>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <p><strong>Expected (Correct Output)</strong></p>
+                            <div class="content">
+                                <pre><span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>test_files/playlist1.csv
+The playlist has 40 songs.
+The first song is Concerning Hobbits by Howard Shore.
+The last song is Bring Him Home by Colm Wilkinson.
+Overture to Candide was played the most times at 33 plays.
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="comparison-container">
+                        <div class="section">
+                            <p><strong>Observed (Your Actual Output)</strong></p>
+                            <div class="content">
+                                <pre>test_files/playlist2.csv
+The playlist has 23 songs.
+The first song is Angels by Joshua Radin.
+The last song is He Lives In You (Reprise) by Jason Raize & Tsidii Le Loka & The Lion King Ensemble.
+The Boy Who Swallowed a Star was played the most times at 27 plays.
+<span style="background-color: rgba(50, 205, 50, 0.4)">T</span><span style="background-color: rgba(50, 205, 50, 0.4)">h</span><span style="background-color: rgba(50, 205, 50, 0.4)">e</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">p</span><span style="background-color: rgba(50, 205, 50, 0.4)">l</span><span style="background-color: rgba(50, 205, 50, 0.4)">a</span><span style="background-color: rgba(50, 205, 50, 0.4)">y</span><span style="background-color: rgba(50, 205, 50, 0.4)">l</span><span style="background-color: rgba(50, 205, 50, 0.4)">i</span><span style="background-color: rgba(50, 205, 50, 0.4)">s</span><span style="background-color: rgba(50, 205, 50, 0.4)">t</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">i</span><span style="background-color: rgba(50, 205, 50, 0.4)">s</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">1</span><span style="background-color: rgba(50, 205, 50, 0.4)">:</span><span style="background-color: rgba(50, 205, 50, 0.4)">4</span><span style="background-color: rgba(50, 205, 50, 0.4)">1</span><span style="background-color: rgba(50, 205, 50, 0.4)">:</span><span style="background-color: rgba(50, 205, 50, 0.4)">1</span><span style="background-color: rgba(50, 205, 50, 0.4)">7</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">l</span><span style="background-color: rgba(50, 205, 50, 0.4)">o</span><span style="background-color: rgba(50, 205, 50, 0.4)">n</span><span style="background-color: rgba(50, 205, 50, 0.4)">g</span><span style="background-color: rgba(50, 205, 50, 0.4)">.</span><span style="background-color: rgba(50, 205, 50, 0.4)">
+</span></pre>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <p><strong>Expected (Correct Output)</strong></p>
+                            <div class="content">
+                                <pre><span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>test_files/playlist2.csv
+The playlist has 23 songs.
+The first song is Angels by Joshua Radin.
+The last song is He Lives In You (Reprise) by Jason Raize & Tsidii Le Loka & The Lion King Ensemble.
+The Boy Who Swallowed a Star was played the most times at 27 plays.
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="comparison-container">
+                        <div class="section">
+                            <p><strong>Observed (Your Actual Output)</strong></p>
+                            <div class="content">
+                                <pre>test_files/playlist3.csv
+The playlist has 64 songs.
+The first song is The White Tree by Howard Shore.
+The last song is Evolution of Magic by Evan Call.
+Love Story Meets Viva La Vida was played the most times at 40 plays.
+<span style="background-color: rgba(50, 205, 50, 0.4)">T</span><span style="background-color: rgba(50, 205, 50, 0.4)">h</span><span style="background-color: rgba(50, 205, 50, 0.4)">e</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">p</span><span style="background-color: rgba(50, 205, 50, 0.4)">l</span><span style="background-color: rgba(50, 205, 50, 0.4)">a</span><span style="background-color: rgba(50, 205, 50, 0.4)">y</span><span style="background-color: rgba(50, 205, 50, 0.4)">l</span><span style="background-color: rgba(50, 205, 50, 0.4)">i</span><span style="background-color: rgba(50, 205, 50, 0.4)">s</span><span style="background-color: rgba(50, 205, 50, 0.4)">t</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">i</span><span style="background-color: rgba(50, 205, 50, 0.4)">s</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">4</span><span style="background-color: rgba(50, 205, 50, 0.4)">:</span><span style="background-color: rgba(50, 205, 50, 0.4)">5</span><span style="background-color: rgba(50, 205, 50, 0.4)">9</span><span style="background-color: rgba(50, 205, 50, 0.4)">:</span><span style="background-color: rgba(50, 205, 50, 0.4)">2</span><span style="background-color: rgba(50, 205, 50, 0.4)">2</span><span style="background-color: rgba(50, 205, 50, 0.4)"> </span><span style="background-color: rgba(50, 205, 50, 0.4)">l</span><span style="background-color: rgba(50, 205, 50, 0.4)">o</span><span style="background-color: rgba(50, 205, 50, 0.4)">n</span><span style="background-color: rgba(50, 205, 50, 0.4)">g</span><span style="background-color: rgba(50, 205, 50, 0.4)">.</span><span style="background-color: rgba(50, 205, 50, 0.4)">
+</span></pre>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <p><strong>Expected (Correct Output)</strong></p>
+                            <div class="content">
+                                <pre><span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>test_files/playlist3.csv
+The playlist has 64 songs.
+The first song is The White Tree by Howard Shore.
+The last song is Evolution of Magic by Evan Call.
+Love Story Meets Viva La Vida was played the most times at 40 plays.
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            
+            <div class="test-result-failed">
+                <div class="content-wrapper">
+                    <div class="result-header">
+                        <h2>Excellent</h2>
+                        <div class="result-subheader">
+                            <div class="status">
+                                <h2>Status:</h2> Failed
+                            </div>
+                            <div class="score">
+                                <h2>Score:</h2> 14.93 / 15.0
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="comparison-container">
+                        <div class="section">
+                            <p><strong>Observed (Your Actual Output)</strong></p>
+                            <div class="content">
+                                <pre>test_files/playlist2.csv
+The playlist has 23 songs.
+The first song is Angels by Joshua Radin.
+The last song is He Lives In You (Reprise) by Jason Raize & Tsidii Le Loka & The Lion King Ensemble.
+The Boy Who Swallowed a Star was played the most times at 27 plays.
+The playlist is 1:41:17 long.
+</pre>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <p><strong>Expected (Correct Output)</strong></p>
+                            <div class="content">
+                                <pre><span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>test_files/playlist2.csv
+The playlist has 23 songs.
+The first song is Angels by Joshua Radin.
+The last song is He Lives In You (Reprise) by Jason Raize & Tsidii Le Loka & The Lion King Ensemble.
+The Boy Who Swallowed a Star was played the most times at 27 plays.
+The playlist is 1:41:17 long.
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="comparison-container">
+                        <div class="section">
+                            <p><strong>Observed (Your Actual Output)</strong></p>
+                            <div class="content">
+                                <pre>test_files/playlist3.csv
+The playlist has 64 songs.
+The first song is The White Tree by Howard Shore.
+The last song is Evolution of Magic by Evan Call.
+Love Story Meets Viva La Vida was played the most times at 40 plays.
+The playlist is 4:59:22 long.
+</pre>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <p><strong>Expected (Correct Output)</strong></p>
+                            <div class="content">
+                                <pre><span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>test_files/playlist3.csv
+The playlist has 64 songs.
+The first song is The White Tree by Howard Shore.
+The last song is Evolution of Magic by Evan Call.
+Love Story Meets Viva La Vida was played the most times at 40 plays.
+The playlist is 4:59:22 long.
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    <div class="comparison-container">
+                        <div class="section">
+                            <p><strong>Observed (Your Actual Output)</strong></p>
+                            <div class="content">
+                                <pre>test_files/playlist1.csv
+The playlist has 40 songs.
+The first song is Concerning Hobbits by Howard Shore.
+The last song is Bring Him Home by Colm Wilkinson.
+Overture to Candide was played the most times at 33 plays.
+The playlist is 3:12:<span style="background-color: rgba(100, 149, 237, 0.4)"> </span>5 long.
+</pre>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <p><strong>Expected (Correct Output)</strong></p>
+                            <div class="content">
+                                <pre><span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>test_files/playlist1.csv
+The playlist has 40 songs.
+The first song is Concerning Hobbits by Howard Shore.
+The last song is Bring Him Home by Colm Wilkinson.
+Overture to Candide was played the most times at 33 plays.
+The playlist is 3:12:<span style="background-color: rgba(100, 149, 237, 0.4)">0</span>5 long.
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            
+            
+        </main>
+        <footer>
+            <p>Generated by byu_pytest_utils on September 26, 2025 03:44 PM</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,7 @@
+
+<<test_files/playlist1.csv>>
+The playlist has ``40;songs;10`` songs.
+The first song is ``Concerning Hobbits;first1;15`` by ``Howard Shore;first2;15``.
+The last song is ``Bring Him Home;last1;15`` by ``Colm Wilkinson;last2;15``.
+``Overture to Candide;title;10`` was played the most times at ``33;plays;10`` plays.
+The playlist is ``3:12:05;length;10`` long.

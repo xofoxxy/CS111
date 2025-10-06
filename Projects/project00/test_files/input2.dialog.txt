@@ -1,0 +1,12 @@
+<<test_files/grades2.test.dat>>
+
+
+
+``Labs:;labs_category;5`` ``333.0/360;labs_points;5`` ``92.5%;labs_percentage;5``
+``Homeworks:;hw_category;5`` ``287.0/300;hw_points;5`` ``95.7%;hw_percentage;5``
+``Projects:;proj_category;5`` ``468.0/500;proj_points;5`` ``93.6%;proj_percentage;5``
+``Progress Checks:;progress_category;5`` ``286.0/300;progress_points;5`` ``95.3%;progress_percentage;5``
+``Midterm 1:;midterm1_category;5`` ``15.0/20;midterm1_points;5`` ``75.0%;midterm1_percentage;5``
+``Midterm 2:;midterm2_category;5`` ``19.0/20;midterm2_points;5`` ``95.0%;midterm2_percentage;5``
+
+The overall grade in the class is: ``A-;letter_grade;5`` ``(91.53%);percentage_grade;5``

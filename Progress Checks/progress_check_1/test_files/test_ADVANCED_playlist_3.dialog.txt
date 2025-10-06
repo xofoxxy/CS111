@@ -1,0 +1,6 @@
+
+<<test_files/playlist3.csv>>
+The playlist has ``64;songs;15`` songs.
+The first song is ``The White Tree;first1;15`` by ``Howard Shore;first2;15``.
+The last song is ``Evolution of Magic;last1;15`` by ``Evan Call;last2;15``.
+``Love Story Meets Viva La Vida;title;10`` was played the most times at ``40;plays;15`` plays.

@@ -1,0 +1,7 @@
+
+<<test_files/playlist2.csv>>
+The playlist has ``23;songs;10`` songs.
+The first song is ``Angels;first1;15`` by ``Joshua Radin;first2;15``.
+The last song is ``He Lives In You (Reprise);last1;15`` by ``Jason Raize & Tsidii Le Loka & The Lion King Ensemble;last2;15``.
+``The Boy Who Swallowed a Star;title;10`` was played the most times at ``27;plays;10`` plays.
+The playlist is ``1:41:17;length;10`` long.

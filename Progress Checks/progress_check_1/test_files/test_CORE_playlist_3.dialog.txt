@@ -1,0 +1,5 @@
+
+<<test_files/playlist3.csv>>
+The playlist has ``64;songs;20`` songs.
+The first song is ``The White Tree;first1;20`` by ``Howard Shore;first2;20``.
+The last song is ``Evolution of Magic;last1;20`` by ``Evan Call;last2;20``.

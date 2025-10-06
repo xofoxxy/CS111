@@ -1,0 +1,5 @@
+
+<<test_files/playlist1.csv>>
+The playlist has ``40;songs;20`` songs.
+The first song is ``Concerning Hobbits;first1;20`` by ``Howard Shore;first2;20``.
+The last song is ``Bring Him Home;last1;20`` by ``Colm Wilkinson;last2;20``.

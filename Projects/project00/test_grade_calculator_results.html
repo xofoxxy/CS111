@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparison Report</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            flex-direction: column;
+            font-family: monospace, sans-serif;
+            line-height: 1.4;
+            background-color: #f9f9f9;
+            color: rgb(0, 46, 93);
+        }
+        .page-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        header, footer {
+            background-color: rgb(0, 46, 93);
+            color: white;
+            text-align: center;
+        }
+        header h1, footer p {
+            margin: 0;
+            padding: 5px 0;
+        }
+        header {
+            margin-bottom: 10px;
+        }
+        footer {
+            margin-top: 10px;
+        }
+        h2 {
+            padding: 5px 0;
+        }
+        .test-summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 50px;
+            font-size: 1em;
+            font-weight: bold;
+        }
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+        .test-result-passed, .test-result-failed {
+            padding: 5px;
+            border-radius: 5px;
+            margin: 10px 50px;
+            position: relative;
+        }
+        .test-result-passed {
+            background-color: #d4edda;
+            border: 2px solid #c3e6cb;
+        }
+        .test-result-failed {
+            background-color: #f8d7da;
+            border: 2px solid #f5c6cb;
+        }
+        .result-header {
+            text-align: center;
+        }
+        .result-header h2 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+        .result-subheader {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 5px;
+            font-size: 1em;
+            padding: 0 10px;
+        }
+        .result-subheader .status, .result-subheader .score {
+            font-size: 1em;
+        }
+        .result-subheader .status h2, .result-subheader .score h2 {
+            display: inline;
+            font-size: 1em;
+            margin-right: 5px;
+        }
+        .comparison-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 10px;
+            padding: 0 10px;
+
+        }
+        @media (max-width: 1500px) {
+            .comparison-container {
+                flex-direction: column;
+            }
+        }
+        .section {
+            flex: 1;
+            min-width: 400px;
+        }
+        .section strong {
+            font-size: 1em;
+        }
+        .content {
+            background: rgb(245, 245, 245);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            overflow-x: auto;
+        }
+        .test-info {
+            margin: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <header>
+            <h1>Test Grade Calculator Results</h1>
+        </header>
+        <main class="main-content">
+            <div class="test-summary">
+                <span>Passed: 3 / 4</span>
+                <span>Total Score: 89.0 / 90.0</span>
+            </div>
+            
+            
+            <div class="test-result-passed">
+                <div class="content-wrapper">
+                    <div class="result-header">
+                        <h2>Test Grade 1</h2>
+                        <div class="result-subheader">
+                            <div class="status">
+                                <h2>Status:</h2> Passed
+                            </div>
+                            <div class="score">
+                                <h2>Score:</h2> 22.5 / 22.5
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-container">
+                        <div class="section">
+                            <p><strong>Observed (Your Actual Output)</strong></p>
+                            <div class="content">
+                                <pre>test_files/grades1.test.dat
+
+Labs: 406.0/440 92.3%
+Homeworks: 337.0/350 96.3%
+Projects: 568.0/600 94.7%
+Progress Checks: 365.0/400 91.2%
+Midterm 1: 15.0/20 75.0%
+Midterm 2: 13.0/20 65.0%
+Midterm 3: 19.0/20 95.0%
+Final: 67.0/70 95.7%
+The overall grade in the class is: B+ (89.56%)
+</pre>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <p><strong>Expected (Correct Output)</strong></p>
+                            <div class="content">
+                                <pre>test_files/grades1.test.dat
+
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span><span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>Labs: 406.0/440 92.3%
+Homeworks: 337.0/350 96.3%
+Projects: 568.0/600 94.7%
+Progress Checks: 365.0/400 91.2%
+Midterm 1: 15.0/20 75.0%
+Midterm 2: 13.0/20 65.0%
+Midterm 3: 19.0/20 95.0%
+Final: 67.0/70 95.7%
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>The overall grade in the class is: B+ (89.56%)
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="test-result-passed">
+                <div class="content-wrapper">
+                    <div class="result-header">
+                        <h2>Test Grade 2</h2>
+                        <div class="result-subheader">
+                            <div class="status">
+                                <h2>Status:</h2> Passed
+                            </div>
+                            <div class="score">
+                                <h2>Score:</h2> 22.5 / 22.5
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-container">
+                        <div class="section">
+                            <p><strong>Observed (Your Actual Output)</strong></p>
+                            <div class="content">
+                                <pre>test_files/grades2.test.dat
+
+Labs: 333.0/360 92.5%
+Homeworks: 287.0/300 95.7%
+Projects: 468.0/500 93.6%
+Progress Checks: 286.0/300 95.3%
+Midterm 1: 15.0/20 75.0%
+Midterm 2: 19.0/20 95.0%
+The overall grade in the class is: A- (91.53%)
+</pre>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <p><strong>Expected (Correct Output)</strong></p>
+                            <div class="content">
+                                <pre>test_files/grades2.test.dat
+
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span><span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>Labs: 333.0/360 92.5%
+Homeworks: 287.0/300 95.7%
+Projects: 468.0/500 93.6%
+Progress Checks: 286.0/300 95.3%
+Midterm 1: 15.0/20 75.0%
+Midterm 2: 19.0/20 95.0%
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>The overall grade in the class is: A- (91.53%)
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="test-result-passed">
+                <div class="content-wrapper">
+                    <div class="result-header">
+                        <h2>Test Grade 3</h2>
+                        <div class="result-subheader">
+                            <div class="status">
+                                <h2>Status:</h2> Passed
+                            </div>
+                            <div class="score">
+                                <h2>Score:</h2> 22.5 / 22.5
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-container">
+                        <div class="section">
+                            <p><strong>Observed (Your Actual Output)</strong></p>
+                            <div class="content">
+                                <pre>test_files/grades3.test.dat
+
+Labs: 329.3/360 91.5%
+Homeworks: 287.1/300 95.7%
+Projects: 468.3/500 93.7%
+Progress Checks: 349.8/400 87.5%
+Midterm 1: 15.2/20 76.2%
+Midterm 2: 16.5/20 82.5%
+Midterm 3: 17.5/20 87.5%
+Final: 61.3/70 87.5%
+The overall grade in the class is: B+ (88.32%)
+</pre>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <p><strong>Expected (Correct Output)</strong></p>
+                            <div class="content">
+                                <pre>test_files/grades3.test.dat
+
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span><span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>Labs: 329.3/360 91.5%
+Homeworks: 287.1/300 95.7%
+Projects: 468.3/500 93.7%
+Progress Checks: 349.8/400 87.5%
+Midterm 1: 15.2/20 76.2%
+Midterm 2: 16.5/20 82.5%
+Midterm 3: 17.5/20 87.5%
+Final: 61.3/70 87.5%
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>The overall grade in the class is: B+ (88.32%)
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="test-result-failed">
+                <div class="content-wrapper">
+                    <div class="result-header">
+                        <h2>Test Grade 4</h2>
+                        <div class="result-subheader">
+                            <div class="status">
+                                <h2>Status:</h2> Failed
+                            </div>
+                            <div class="score">
+                                <h2>Score:</h2> 21.5325 / 22.5
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-container">
+                        <div class="section">
+                            <p><strong>Observed (Your Actual Output)</strong></p>
+                            <div class="content">
+                                <pre>test_files/grades4.test.dat
+
+Labs: 365.4/420 87.0%
+Homeworks: 287.1/300 95.7%
+Projects: 506.7/600 84.4%
+Progress Checks: 342.5/400 85.6%
+Midterm 1: 15.2/20 76.2%
+Midterm 2: 17.<span style="background-color: rgba(100, 149, 237, 0.4)">2</span>/20 8<span style="background-color: rgba(100, 149, 237, 0.4)">6</span>.<span style="background-color: rgba(100, 149, 237, 0.4)">2</span>%
+Midterm 3: 17.<span style="background-color: rgba(100, 149, 237, 0.4)">0</span>/20 8<span style="background-color: rgba(100, 149, 237, 0.4)">5</span>.<span style="background-color: rgba(100, 149, 237, 0.4)">0</span>%
+Final: 61.3/70 87.5%
+The overall grade in the class is: B (85.96%)
+</pre>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <p><strong>Expected (Correct Output)</strong></p>
+                            <div class="content">
+                                <pre>test_files/grades4.test.dat
+
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span><span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>Labs: 365.4/420 87.0%
+Homeworks: 287.1/300 95.7%
+Projects: 506.7/600 84.4%
+Progress Checks: 342.5/400 85.6%
+Midterm 1: 15.2/20 76.2%
+Midterm 2: 17.<span style="background-color: rgba(100, 149, 237, 0.4)">0</span>/20 8<span style="background-color: rgba(100, 149, 237, 0.4)">5</span>.<span style="background-color: rgba(100, 149, 237, 0.4)">0</span>%
+Midterm 3: 17.<span style="background-color: rgba(100, 149, 237, 0.4)">2</span>/20 8<span style="background-color: rgba(100, 149, 237, 0.4)">6</span>.<span style="background-color: rgba(100, 149, 237, 0.4)">2</span>%
+Final: 61.3/70 87.5%
+<span style="background-color: rgba(255, 99, 71, 0.4)">
+</span>The overall grade in the class is: B (85.96%)
+</pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+        </main>
+        <footer>
+            <p>Generated by byu_pytest_utils on September 24, 2025 11:04 PM</p>
+        </footer>
+    </div>
+</body>
+</html>

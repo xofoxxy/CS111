@@ -1,0 +1,5 @@
+
+<<test_files/playlist2.csv>>
+The playlist has ``23;songs;20`` songs.
+The first song is ``Angels;first1;20`` by ``Joshua Radin;first2;20``.
+The last song is ``He Lives In You (Reprise);last1;20`` by ``Jason Raize & Tsidii Le Loka & The Lion King Ensemble;last2;20``.
