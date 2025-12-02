@@ -91,6 +91,10 @@ def print_n(n):
         return print_n(n - 1)
     return inner_print
 
+jump = {(2*x-1):x for x in range(50)}
+
+if __name__ == "__main__":
+    print(jump[jump[13]])
 
 # OPTIONAL QUESTION
 #####################
