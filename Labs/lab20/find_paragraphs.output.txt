@@ -1,0 +1,8 @@
+<p>Here are some interesting facts about programming:</p>
+<p>Ada Lovelace is often called the first computer programmer. She wrote the world's first algorithm for Charles Babbage's Analytical Engine in the 1840s.</p>
+<p>The "Hello, World!" program is often the first program written by developers when learning a new programming language.</p>
+<p>The concept of Object-Oriented Programming (OOP) was first developed by Ole-Johan Dahl and Kristen Nygaard of Norway in the 1960s.</p>
+<p>The first commercially available high-level programming language, Fortran, was developed in the 1950s by IBM for scientific and engineering calculations.</p>
+<p>The programming language Python is named after a BBC comedy series from the 1970s called "Monty Python's Flying Circus".</p>
+<p>An urban legend states that the term "bug" was coined by computer scientist Grace Hopper when an actual bug (a moth) flew into the Harvard Mark II computer in 1947 and caused a malfunction.</p>
+<p>The World Wide Web was invented by Sir Tim Berners-Lee in 1989 while he was working at CERN (European Organization for Nuclear Research).</p>
