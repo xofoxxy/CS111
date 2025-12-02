@@ -1,6 +1,5 @@
 import requests
 import bs4
-import regex as re
 
 
 def download(url, output_filename):
